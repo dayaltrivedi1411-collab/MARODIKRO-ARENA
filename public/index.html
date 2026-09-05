@@ -1,0 +1,32 @@
+```html
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MARODIKRO ARENA</title><link rel="stylesheet" href="style.css">
+</head><body>
+<section id="lobby">
+  <div class="logo">MARODIKRO <span>ARENA</span></div>
+  <div class="sub">2 PLAYER • LIVE • CHAOS</div>
+  <div class="panel">
+    <div class="pill">⚡ LIVE MULTIPLAYER</div>
+    <h1>Choose your fighter.</h1>
+    <p>One link. One room. Two players. Let the friendship suffer.</p>
+    <label>Your name<input id="name" maxlength="16" value="DAYAL" placeholder="DAYAL"></label>
+    <label>Room code<input id="room" maxlength="8" placeholder="BATMAN7"></label>
+    <button id="start">ENTER ARENA</button>
+    <div id="msg">Create any room code and give the same code to your friend.</div>
+    <div class="rules"><div><b>DAYAL</b><small>1 hit = elimination</small></div><div><b>MARODIKRO</b><small>5 hits = elimination</small></div></div>
+  </div>
+</section>
+
+<section id="game" class="hide">
+<header><div><b>MARODIKRO ARENA</b><small id="roomLabel"></small></div><div class="live"><i></i> LIVE <span id="time"></span></div></header>
+<div class="wrap">
+  <div class="top"><div class="p blue"><b id="n1">DAYAL</b><span>☠ ONE SHOT</span></div><strong id="status">WAITING...</strong><div class="p red"><b id="n2">MARODIKRO</b><span id="hp">♥♥♥♥♥</span></div></div>
+  <canvas id="c" width="1120" height="620"></canvas>
+  <div class="help"><span><b>WASD</b> MOVE</span><span><b>MOUSE</b> AIM</span><span><b>CLICK</b> FIRE</span><button id="leave">EXIT</button></div>
+</div>
+</section>
+<script src="game.js"></script>
+</body></html>
+```
