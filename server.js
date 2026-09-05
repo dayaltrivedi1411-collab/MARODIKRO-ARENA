@@ -60,7 +60,7 @@ wss.on("connection", ws=>{
       if(room.players.size>=2) return send(ws,{type:"error",message:"That arena already has two players."});
 
       id=room.players.size+1;
-      const maxHp=id===1?1:5;
+     const maxHp=5;
       room.players.set(id,{ws,id,name:cleanName(m.name),x:id===1?160:960,y:470,hp:maxHp,maxHp});
       send(ws,{type:"joined",id,room:code});
       broadcast(room,{type:"players",players:snapshot(room)});
@@ -90,7 +90,7 @@ wss.on("connection", ws=>{
       if(!target || target.hp<=0) return;
       const distance=Math.hypot(me.x-target.x,me.y-target.y);
       if(distance>720) return;
-      target.hp=Math.max(0,target.hp-(id===1?5:1));
+      target.hp=Math.max(0,target.hp-1);
       broadcast(room,{type:"hit_confirmed",attacker:id,target:targetId,hp:target.hp,maxHp:target.maxHp});
       if(target.hp===0){
         broadcast(room,{type:"round_over",winner:id,loser:targetId});
